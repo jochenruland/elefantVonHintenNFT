@@ -2,10 +2,10 @@ pragma solidity ^0.8.10;
 
 // Intro
 /* Non fungible tokens
- * Standard caN represent virtual collectables but also pysical protoerty or "negative value assets" like loans f.ex.
+ * Standard can represent virtual collectables but also pysical protoerty or "negative value assets" like loans f.ex.
  * Every ERC-721 compliant contract must implement (inherit from) the ERC721 interface and teh ERC165 interface
  * Ex. of ERC-721 -> Crypto Kitties : Kitten A -> tokenID 1, Kitten B -> tokenID 2 ; Do not necessarily be incremental ; Therfore tokenID !== token index
- * to address a specific nft you need the address of the ERC721 smart contract (like with ERC20) and the tokenID
+ * To address a specific nft you need the address of the ERC721 smart contract (like with ERC20) and the tokenID
  */
 
 import "./ERC721Interface.sol";
@@ -24,9 +24,10 @@ contract myERC721 is ERC721Interface {
   mapping(address => mapping(address => bool)) private _operatorApprovals;
 
   // cf. interface description
-  // If there balance of an owner address is 10 f.ex. it means that this owner has 10 nfts but they are all different
-  // -> different tokenIDs
-  // -> each token can have any kind of different properties (on Chain and off chain)
+  /* If there balance of an owner address is 10 f.ex. it means that this owner has 10 nfts but they are all different
+   * -> different tokenIDs
+   * -> each token can have any kind of different properties (on Chain and off chain)
+  */
   function balanceOf(address owner) external view returns(uint256) {
     require(owner != address(0), "Error: owner must be a valid address");
     return _balances[owner];
@@ -41,21 +42,23 @@ contract myERC721 is ERC721Interface {
   }
 
   // cf. interface description
-  // possible to transfer a token from one address to another address (means attributing a new "owner" to the tokenId in the ERC721 contract)
-  // trasferFrom does not check if the receipient is a smart contract which has implemented the IERC721Receiver function - this is implemented in safeTransferFrom 1&2 (just different signatures)
-  // con be called by the owner, the operator and any address approved for the specific tokenId
-  // The payable keyword is optional as you can decide in your implementation if you want the ERC721 contract to be able to receive ether or not (might be better to handle the money in a seperate contract)
-  // Why specifying the from address when there is a mapping which knows the actual address of a tokenId -> the standard wants to be explicit about the combination of from and tokenId to make the transfer secure / otherwise throw an error
+  /* possible to transfer a token from one address to another address (means attributing a new "owner" to the tokenId in the ERC721 contract)
+   * trasferFrom does not check if the receipient is a smart contract which has implemented the IERC721Receiver function - this is implemented in safeTransferFrom 1&2 (just different signatures)
+   * con be called by the owner, the operator and any address approved for the specific tokenId
+   * The payable keyword is optional as you can decide in your implementation if you want the ERC721 contract to be able to receive ether or not (might be better to handle the money in a seperate contract)
+   * Why specifying the from address when there is a mapping which knows the actual address of a tokenId -> the standard wants to be explicit about the combination of from and tokenId to make the transfer secure / otherwise throw an error
+   */
   function transferFrom(address from, address to, uint256 tokenId) external payable {
     _transfer(from, to, tokenId);
   }
 
   // cf. interface description
-  // in case the receipient is a smart contract this function checks if it is able to handle ERC721 token; otherwise they will be blocked forever in the receipient contract
-  // The handling smart contract must inherit from the ERC721TokenReceiver interface which allows to access the function onERC721Received(...)
-  // The safeTransferFrom() function will call the onERC721Received(...) which returns function indentifer/magic value created by 'bytes4(keccak256('onERC721Received(address,address,uint256,bytes)'))'
-  // If the safeTransferFrom recieves this magic value it continuous to processes the transfer; otherwise the transfer will be reverted
-  // bytes data can be some arbitrary bytes which can be used to identify the transaction in the receipient contract; if you do not need that you can use the simplified version
+  /* in case the receipient is a smart contract this function checks if it is able to handle ERC721 token; otherwise they will be blocked forever in the receipient contract
+   * The handling smart contract must inherit from the ERC721TokenReceiver interface which allows to access the function onERC721Received(...)
+   * The safeTransferFrom() function will call the onERC721Received(...) which returns function indentifer/magic value created by 'bytes4(keccak256('onERC721Received(address,address,uint256,bytes)'))'
+   * If the safeTransferFrom recieves this magic value it continuous to processes the transfer; otherwise the transfer will be reverted
+   * bytes data can be some arbitrary bytes which can be used to identify the transaction in the receipient contract; if you do not need that you can use the simplified version
+   */
   function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external payable {
     _safeTransferFrom(from, to, tokenId, data);
   }
@@ -65,8 +68,9 @@ contract myERC721 is ERC721Interface {
   }
 
   // cf. interface description
-  // allows the owner to approve someone else to be able to transfer the specific tokenId (needed for exchanges f.ex.)
-  // this function can also be called the the operator
+  /* allows the owner to approve someone else to be able to transfer the specific tokenId (needed for exchanges f.ex.)
+   * this function can also be called the the operator
+   */
   function approve(address to, uint256 tokenId) external {
     // check if the address to is allowed to approve someoneelse
     address owner = myERC721.ownerOf(tokenId);
@@ -82,9 +86,10 @@ contract myERC721 is ERC721Interface {
 
 
   // cf. interface description
-  // the owner can define an operator which is an address generally approved for all tokens
-  // the operator is also entitled to approve other addresses
-  // An operator does not work per tokenId but per token owner
+  /* the owner can define an operator which is an address generally approved for all tokens
+   * the operator is also entitled to approve other addresses
+   * An operator does not work per tokenId but per token owner
+   */
   function setApprovalForAll(address operator, bool _approved) external {
     _operatorApprovals[msg.sender][operator] = _approved;
 
@@ -93,7 +98,6 @@ contract myERC721 is ERC721Interface {
 
 
   // cf. interface description
-  //
   function getApproved(uint256 tokenId) external view returns(address) {
     return _tokenApprovals[tokenId];
   }
