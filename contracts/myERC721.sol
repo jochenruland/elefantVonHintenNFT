@@ -8,11 +8,18 @@ pragma solidity ^0.8.10;
  * To address a specific nft you need the address of the ERC721 smart contract (like with ERC20) and the tokenID
  */
 
-import "./ERC721Interface.sol";
-import "./ERC721IReceiver.sol";
-import "./addressUtils.sol";
+import "./ERC165.sol";
+import "./IERC721.sol";
+import "./IERC721Metadata.sol";
 
-contract myERC721 is ERC721Interface {
+/**
+ * @dev IERC721Receiver will not be implemented in this contract; it will only serve to call onERC721Received() of other contracts
+ */
+import "./IERC721Receiver.sol";
+import "./addressUtils.sol";
+import "./Strings.sol";
+
+contract MyERC721 is ERC721Interface {
   using AddressUtils for address;
 
   // Magic Value equal to "bytes4(keccak256('onERC721Received(address,address,uint256,bytes)'))"
