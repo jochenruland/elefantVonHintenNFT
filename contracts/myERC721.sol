@@ -71,6 +71,24 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
   }
 
   /**
+   * @dev Returns the Uniform Resource Identifier (URI) for `tokenId` token.
+   */
+  function tokenURI(uint256 tokenId) public view override returns (string memory) {
+    string memory baseURI = _baseURI();
+
+    return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenId.toString())) : "";
+  }
+
+  /**
+   * @dev Base URI for computing {tokenURI}. If set, the resulting URI for each
+   * token will be the concatenation of the `baseURI` and the `tokenId`. Empty
+   * by default. Has to be filled in before deployment.
+   */
+  function _baseURI() internal view virtual returns (string memory) {
+    return "";
+  }
+
+  /**
    * @dev cf. description in interface {IERC721}
    * If the balance of an owner address is 10 f.ex. it means that this owner has 10 nfts but they are all different
    * -> different tokenIDs
