@@ -46,6 +46,16 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
  }
 
  /**
+  * @dev See {ERC165-supportsInterface}.
+  * Extends supportsInterface(bytes4 interfaceId) of ERC165 with Interfaces of this contract
+  */
+ function supportsInterface(bytes4 interfaceId) public view override(ERC165, IERC165) returns (bool) {
+   return interfaceId == type(IERC721).interfaceId ||
+     interfaceId == type(IERC721Metadata).interfaceId ||
+     super.supportsInterface(interfaceId);
+ }
+
+ /**
  * @dev Returns the token collection name.
  */
 
