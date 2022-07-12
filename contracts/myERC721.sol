@@ -21,20 +21,44 @@ import "./IERC721Receiver.sol";
 import "./addressUtils.sol";
 import "./Strings.sol";
 
-contract MyERC721 is ERC721Interface {
+contract MyERC721 is ERC165, IERC721, IERC721Metadata {
   using AddressUtils for address;
+  using Strings for uint256;
 
   // Magic Value equal to "bytes4(keccak256('onERC721Received(address,address,uint256,bytes)'))"
   bytes4 internal constant MAGIC_VAL_ERC721_RECEIVED = 0x150b7a02;
+
+  string private _name;
+  string private _symbol;
 
   mapping(address => uint) private _balances;
   mapping(uint256 => address) private _owners;
   mapping(uint256 => address) private _tokenApprovals;
   mapping(address => mapping(address => bool)) private _operatorApprovals;
 
-  /**
+ /**
  * @dev Event definition see {IERC721}
  */
+
+ constructor(string memory name_, string memory symbol_)  {
+   _name = name_;
+   _symbol = symbol_;
+ }
+
+ /**
+ * @dev Returns the token collection name.
+ */
+
+ function name() public view override returns (string memory) {
+   return _name;
+  }
+
+ /**
+  * @dev Returns the token collection symbol.
+  */
+  function symbol() public view override returns (string memory) {
+    return _symbol;
+  }
 
   /**
    * @dev cf. description in interface {IERC721}
