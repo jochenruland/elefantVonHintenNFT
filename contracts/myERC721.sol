@@ -146,7 +146,7 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
     address owner = myERC721.ownerOf(tokenId);
 
     require(to != owner, "Error: to address is the current owner");
-    require(msg.sender == owner, "Error: msg.sender not allowed to approve this tokenId");
+    require(msg.sender == owner || msg.sender == _tokenApprovals[tokenId] || _operatorApprovals[owner][msg.sender] == true, "Error: msg.sender not allowed to approve this tokenId");
 
     _tokenApprovals[tokenId] = to;
 
