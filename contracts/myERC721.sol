@@ -117,7 +117,7 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
    * The payable keyword is optional as you can decide in your implementation if you want the ERC721 contract to be able to receive ether or not (might be better to handle the money in a seperate contract)
    * Why specifying the from address when there is a mapping which knows the actual address of a tokenId -> the standard wants to be explicit about the combination of from and tokenId to make the transfer secure / otherwise throw an error
    */
-  function transferFrom(address from, address to, uint256 tokenId) external payable {
+  function transferFrom(address from, address to, uint256 tokenId) external {
     _transfer(from, to, tokenId);
   }
 
@@ -129,11 +129,11 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
    * If the safeTransferFrom recieves this magic value it continuous to process the transfer; otherwise the transfer will be reverted
    * bytes data can be some arbitrary bytes which can be used to identify the transaction in the receipient contract; if you do not need that you can use the simplified version
    */
-  function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external payable {
+  function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external {
     _safeTransferFrom(from, to, tokenId, data);
   }
 
-  function safeTransferFrom(address from, address to, uint256 tokenId) external payable {
+  function safeTransferFrom(address from, address to, uint256 tokenId) external {
     _safeTransferFrom(from, to, tokenId, "");
   }
 
