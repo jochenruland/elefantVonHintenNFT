@@ -23,7 +23,6 @@ contract ElefantVonHinten is MyERC721 {
     uint256 maxTokens_,
     uint256 maxMints_,
     uint256 tokenPrice_,
-    uint256 totalSupply_
   ) MyERC721(name, symbol) {
     maxTokens = maxTokens_;
     maxMints = maxMints_;
@@ -37,6 +36,28 @@ contract ElefantVonHinten is MyERC721 {
    */
   function _baseURI() internal view override returns (string memory) {
     return baseTokenURI;
+  }
+
+  /**
+   * @dev Minting and token sale
+   * @params numberOfTokens - number of tokens to be minted
+   * Requirements
+   * - numberOfTokens must be inferior or equal to maxMints
+   * - totalSupply must stay inferior or equal to maxTokens
+   * - must send enough ether to pay all token minted
+   */
+  function mintElefants(uint256 numberOfTokens) external payable {
+    require(numberOfTokens <= maxMints, "ERROR: only up to maxMints token allowed to be minted");
+    require(totalSupply + numberOfTokens <= maxTokens, "ERROR: maximum amount of tokens has already be minted");
+    require(tokenPrice * numberOfTokens <= msg.value , "ERROR: not enough ether sent to mint all tokens");
+
+    for(uint i=0, i < numberOfTokens, i++) {
+      if(totalSupply < maxTokens) {
+        _safeMint(msgSender(), totalSupply);
+        totalSupply++;
+      }
+    }
+
   }
 
 
