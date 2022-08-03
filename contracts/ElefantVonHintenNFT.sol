@@ -2,8 +2,9 @@
 pragma solidity 0.8.10;
 
 import "./MyERC721.sol";
+import "./Context.sol";
 
-contract ElefantVonHinten is MyERC721 {
+contract ElefantVonHinten is MyERC721, Context {
   uint256 public maxTokens; // Maximum of tokens to be minted
   uint256 public maxMints; // Maximum of tokens to be minted at a time
   uint256 public tokenPrice;
@@ -53,7 +54,7 @@ contract ElefantVonHinten is MyERC721 {
 
     for(uint i=0, i < numberOfTokens, i++) {
       if(totalSupply < maxTokens) {
-        _safeMint(msgSender(), totalSupply);
+        _safeMint(_msgSender(), totalSupply);
         totalSupply++;
       }
     }
