@@ -23,7 +23,7 @@ contract ElefantVonHinten is MyERC721, Context {
     string memory baseTokenURI_,
     uint256 maxTokens_,
     uint256 maxMints_,
-    uint256 tokenPrice_,
+    uint256 tokenPrice_
   ) MyERC721(name, symbol) {
     maxTokens = maxTokens_;
     maxMints = maxMints_;
