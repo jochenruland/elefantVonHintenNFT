@@ -52,7 +52,7 @@ contract ElefantVonHinten is MyERC721, Context {
     require(totalSupply + numberOfTokens <= maxTokens, "ERROR: maximum amount of tokens has already be minted");
     require(tokenPrice * numberOfTokens <= msg.value , "ERROR: not enough ether sent to mint all tokens");
 
-    for(uint i=0, i < numberOfTokens, i++) {
+    for(uint i=0; i < numberOfTokens; i++) {
       if(totalSupply < maxTokens) {
         _safeMint(_msgSender(), totalSupply);
         totalSupply++;
