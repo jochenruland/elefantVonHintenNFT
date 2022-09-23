@@ -38,8 +38,8 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
   mapping(address => mapping(address => bool)) private _operatorApprovals;
 
  /**
- * @dev Event definition see {IERC721}
- */
+  * @dev Event definition see {IERC721}
+  */
 
  constructor(string memory name_, string memory symbol_)  {
    _name = name_;
@@ -105,7 +105,7 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
    * Knowing the tokenId one can request the owner address of that tokenId
    */
   function ownerOf(uint256 tokenId) external view returns (address owner) {
-    address owner = _owners[tokenId];
+    owner = _owners[tokenId];
     require(owner != address(0), "Error: it seems like this tokenId does not exist");
     return owner;
   }
@@ -144,7 +144,7 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
    * This function can also be called by the operator
    */
   function approve(address to, uint256 tokenId) external {
-    address owner = myERC721.ownerOf(tokenId);
+    address owner = MyERC721.ownerOf(tokenId);
 
     require(to != owner, "Error: to address is the current owner");
     require(msg.sender == owner || msg.sender == _tokenApprovals[tokenId] || _operatorApprovals[owner][msg.sender] == true, "Error: msg.sender not allowed to approve this tokenId");
@@ -202,7 +202,7 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
 
   // Modifier
   modifier allowedToTransfer(uint256 tokenId) {
-    address owner = myERC721.ownerOf(tokenId);
+    address owner = MyERC721.ownerOf(tokenId);
     require(owner == msg.sender || _tokenApprovals[tokenId] == msg.sender || _operatorApprovals[owner][msg.sender] == true, "Error: msg.sender not allowed to transfer this token");
     _;
   }
