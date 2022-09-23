@@ -13,10 +13,10 @@ contract ElefantVonHinten is MyERC721, Context {
   string public baseTokenURI;
 
   /**
-  * @dev All state variables are initialized in the constructor.
-  * To be more flexible one could define setter functions for each state variable and call them in the constructor.
-  * We will keep it as simple as possible here.
-  */
+   * @dev All state variables are initialized in the constructor.
+   * To be more flexible one could define setter functions for each state variable and call them in the constructor.
+   * We will keep it as simple as possible here.
+   */
   constructor(
     string memory name,
     string memory symbol,
@@ -41,7 +41,7 @@ contract ElefantVonHinten is MyERC721, Context {
 
   /**
    * @dev Minting and token sale
-   * @params numberOfTokens - number of tokens to be minted
+   * @param numberOfTokens - number of tokens to be minted
    * Requirements
    * - numberOfTokens must be inferior or equal to maxMints
    * - totalSupply must stay inferior or equal to maxTokens
