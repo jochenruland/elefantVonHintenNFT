@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
 // Inspired and some parts copied from openzeppelin implementation of ERC721 - MIT licence
