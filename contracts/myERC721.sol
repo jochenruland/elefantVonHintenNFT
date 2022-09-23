@@ -195,9 +195,9 @@ contract MyERC721 is ERC165, IERC721, IERC721Metadata {
 
     _balances[_from] -= 1;
     _balances[_to] += 1;
-    _owners[_tokenId] = to;
+    _owners[_tokenId] = _to;
 
-    emit Transfer(from, to, tokenId);
+    emit Transfer(_from, _to, _tokenId);
   }
 
   // Modifier
