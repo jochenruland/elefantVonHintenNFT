@@ -147,7 +147,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -160,7 +161,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -179,7 +181,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -203,7 +206,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -216,7 +220,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -229,7 +234,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -242,7 +248,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -261,7 +268,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -349,7 +357,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -362,7 +371,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -375,7 +385,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -394,7 +405,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -407,7 +419,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -443,7 +456,8 @@
       "name": "mintElefants",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"symbol\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"baseTokenURI_\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"maxTokens_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxMints_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tokenPrice_\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"baseTokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxMints\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxTokens\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"numberOfTokens\",\"type\":\"uint256\"}],\"name\":\"mintElefants\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"Gives permission to `to` to transfer `tokenId` token to another account. The approval is cleared when the token is transferred. Only a single account can be approved at a time, so approving the zero address clears previous approvals. Requirements: - The caller must own the token or be an approved operator. - `tokenId` must exist. Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the number of tokens in `owner's` account.\"},\"constructor\":{\"details\":\"All state variables are initialized in the constructor. To be more flexible one could define setter functions for each state variable and call them in the constructor. We will keep it as simple as possible here.\"},\"getApproved(uint256)\":{\"details\":\"Returns the account approved for `tokenId` token. Requirements: - `tokenId` must exist.\"},\"isApprovedForAll(address,address)\":{\"details\":\"Returns if the `operator` is allowed to manage all of the assets of `owner`. See {setApprovalForAll}\"},\"mintElefants(uint256)\":{\"details\":\"Minting and token sale\",\"params\":{\"numberOfTokens\":\"- number of tokens to be minted Requirements - numberOfTokens must be inferior or equal to maxMints - totalSupply must stay inferior or equal to maxTokens - must send enough ether to pay all token minted\"}},\"name()\":{\"details\":\"Returns the token collection name.\"},\"ownerOf(uint256)\":{\"details\":\"Returns the owner of the `tokenId` token. Requirements: - `tokenId` must exist.\"},\"safeTransferFrom(address,address,uint256)\":{\"details\":\"Safely transfers `tokenId` token from `from` to `to`, checking first that contract recipients are aware of the ERC721 protocol to prevent tokens from being forever locked. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must have been allowed to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer. Emits a {Transfer} event.\"},\"safeTransferFrom(address,address,uint256,bytes)\":{\"details\":\"Safely transfers `tokenId` token from `from` to `to`. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer. Emits a {Transfer} event.\"},\"setApprovalForAll(address,bool)\":{\"details\":\"Approve or remove `operator` as an operator for the caller. Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller. Requirements: - The `operator` cannot be the caller. Emits an {ApprovalForAll} event.\"},\"supportsInterface(bytes4)\":{\"details\":\"See {ERC165-supportsInterface}.\"},\"symbol()\":{\"details\":\"Returns the token collection symbol.\"},\"tokenURI(uint256)\":{\"details\":\"Returns the Uniform Resource Identifier (URI) for `tokenId` token.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Transfers `tokenId` token from `from` to `to`. WARNING: Usage of this method is discouraged, use {safeTransferFrom} whenever possible. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. Emits a {Transfer} event.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/ElefantVonHintenNFT.sol\":\"ElefantVonHinten\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/Context.sol\":{\"keccak256\":\"0x80cc1015a39813151b1ab6b5dba9f8df3d2889aa20b2f63a3e087a002f68ac1d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aaa87091d1afb3e82f4213cb5930fa38f972efd83a7313a752ae9ca44c2801b9\",\"dweb:/ipfs/QmUhLEEQAYtsQneuiwnNMyPukJjw6BNctXMC8D9mo6kVVM\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/ERC165.sol\":{\"keccak256\":\"0x3d3fe7b1901114d50828f5c77ba7f09a2a6a65223620c837364d31b60e5982ac\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6751cee12592cb9c33be618057660d6c84cb0594bd0afa552009438e38d3dd02\",\"dweb:/ipfs/QmWq8SxNw4q6n1B8i9sFZVaodB6wrcyBPsKPWMsaUyCECH\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/ElefantVonHintenNFT.sol\":{\"keccak256\":\"0x852f63ad5e9ccd9113c87f6db7b4f0a76abdaff2f6ef526fdcb40ea3519f23e8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b774275e7d9cefcba602894c314c5afc26d5773f58405b7821a1656d0a857a50\",\"dweb:/ipfs/QmR9JktL9YdumpeEGhmZ9LnpXYLcW76XfdiLfTjYebq1Kh\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/IERC165.sol\":{\"keccak256\":\"0x540685d7ece3faa56f38253270ff11b18e63949fb8659c408123b1874674492e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5474839e19e2571c52eae3aab1dc6e6edf2b20bbba9895f59db6594a2678a3d5\",\"dweb:/ipfs/QmVHocBeANMkq4TzVM7q9At5NSg1TEpT9D9vgJ5dGcvcPN\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/IERC721.sol\":{\"keccak256\":\"0x7185610c76f15e41149e465f1207c8dbedc6a55c1325713b0d1b6e9c0b808fa5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95a60a0c3a90d058b5120608a5be5b1b3205283475210e6877cf338595209a77\",\"dweb:/ipfs/QmeBYsScPzr5ydPoZ6Eg75rvvy3pShFfkQepD9SoBPc7ja\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/IERC721Metadata.sol\":{\"keccak256\":\"0xbf2e88ad5b8909524def23988a9c19dd3fc968c8dcd97e4eb1515f4b616562e2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49139c051f825cd59cc4e8ec1bf0187498e4dbf1eac37f05d3124c2475f7eb81\",\"dweb:/ipfs/QmNzQjsHQcn355QWrSjp4qNweGmbmWSXGobewoXspA8M8N\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/IERC721Receiver.sol\":{\"keccak256\":\"0x51c0cd9b81f8261aeb599200daa25e857a8c4ab8b6bbd219fb03db39877c5369\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ca12e9ff75314e61f91f966c5587aaabbcdee4c9b33378ef853a6391a8e0ff9a\",\"dweb:/ipfs/QmRS3UJdThGMiDYnnLXM7U82ik1LsCrbFTEbAx1Kh15qar\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/MyERC721.sol\":{\"keccak256\":\"0x56760c3bebdfbe4f33cdba30a885bb0035b7cb5caca5aa8bcd60babecab0a9d3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d6f66562ddc15c36e4808d2a68bf2d533ccc80b182391e559ff7f42ad2cc04ec\",\"dweb:/ipfs/QmTb8tua75Mof6LRrkRqaLQtUwm6JzkizPshtrFTEq6Jio\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/Strings.sol\":{\"keccak256\":\"0xc60aea41a593372b597e31995a9408ea84dfd534cf9d146070b271db8d736cbe\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f532dafd1837a4889e75b099189ccf56b9dde4c1dfaf81a5b410da58dd50e2e1\",\"dweb:/ipfs/Qmf3wyAFybUGetEKA9pTo6aCuMR4Jk2tEUHizAhV9tdfJ3\"]},\"/C/Rula01/01_Lernen/MyProjects/ElefantVonHintenNFT/contracts/addressUtils.sol\":{\"keccak256\":\"0x29cdeb28f1e34c1239b2f82d689e0ffd6b8a95daf603d5433c893074f3ccb7f9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://30c95907b58747d92a0a53135d8de085a2e44335af62ec00c67ab4739742a595\",\"dweb:/ipfs/QmUGiu6HXg3rL3RfDKjH95jksjEmTcagNEc5id7DDBWpnk\"]}},\"version\":1}",
@@ -19111,9 +19125,17 @@
     "name": "solc",
     "version": "0.8.10+commit.fc410830.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "999": {
+      "events": {},
+      "links": {},
+      "address": "0xe7212d208586b8C0c90CB8dcD9Ee5A5bb1C1a2c6",
+      "transactionHash": "0xdc8766fbceaf402d64715e84fbe9cf813ec17c576d15dc40cf6ae03990e6d289"
+    }
+  },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2022-09-23T07:19:54.715Z",
+  "updatedAt": "2022-09-28T04:39:23.953Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
