@@ -51,8 +51,8 @@ const Web3 = require('web3');
 const provider = new Web3.providers.WebsocketProvider('http://127.0.0.1:7545', options);
 const web3 = new Web3(provider);
 
-const IPFSstorageJSON = require('../build/contracts/IPFSstorage.json');
-const deploymentKey = Object.keys(IPFSstorageJSON.networks)[0];
+const ElefantVonHintenJSON = require('../build/contracts/ElefantVonHinten.json');
+const deploymentKey = Object.keys(ElefantVonHintenJSON.networks)[0];
 
 let accounts;
 let contractInstance;
@@ -65,7 +65,7 @@ let client;
 
 before(async () => {
   accounts = await web3.eth.getAccounts();
-  contractInstance = new web3.eth.Contract(IPFSstorageJSON.abi, IPFSstorageJSON.networks[deploymentKey].address);
+  contractInstance = new web3.eth.Contract(ElefantVonHintenJSON.abi, ElefantVonHintenJSON.networks[deploymentKey].address);
 
   // Web3 transaction information, we'll use this for every transaction we'll send as long as we do not pass any value
   sendParamaters = {
@@ -78,7 +78,7 @@ before(async () => {
 
 })
 
-describe('Testing IPFSstorage on mainfork', () => {
+describe('Testing ElefantVonHintenNFT on mainnetForkfork', () => {
 
   it('1. Contract deployed to mainfork and address available', () => {
     console.log('Mainfork connected: ', accounts);
@@ -89,5 +89,7 @@ describe('Testing IPFSstorage on mainfork', () => {
   it('2. Connects to ipfs-http-client', () => {
       console.log(client.getEndpointConfig()); //
   });
+
+  
 
 });
