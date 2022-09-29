@@ -115,4 +115,15 @@ describe('Testing ElefantVonHintenNFT on mainnetForkfork', () => {
 
   });
 
+  it('4. Mints correct number of tokens', async () => {
+    await contractInstance.methods.mintElefants(2).send({
+      from: accounts[0],
+      gasLimit: web3.utils.toHex(5000000),
+      gasPrice: web3.utils.toHex(20000000000),
+      value: '2000'
+    });
+    //expect(await contractInstance.methods.mintElefants.call({from: accounts[0]})).to.equal('ElefantVonHinten');
+    console.log(await contractInstance.methods.balanceOf(accounts[0]).call({from: accounts[0]}));
+  })
+
 });
