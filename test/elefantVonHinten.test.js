@@ -83,17 +83,36 @@ describe('Testing ElefantVonHintenNFT on mainnetForkfork', () => {
 
   it('1. Contract deployed to mainfork and address available', () => {
     console.log('Mainfork connected: ', accounts);
+
+    expect(contractInstance.options.address).to.exist;
     console.log('1. Contract address: ', contractInstance.options.address);
-    assert.ok(contractInstance.options.address);
+
   });
 
   it('2. Connects to ipfs-http-client', () => {
+      expect(client.getEndpointConfig()).to.exist
       console.log(client.getEndpointConfig()); //
   });
 
   it('3. Sets all state variables', async () => {
-    //console.log(await contractInstance.methods.maxTokens().call({from: accounts[0]}));
+    expect(await contractInstance.methods.name().call({from: accounts[0]})).to.equal('ElefantVonHinten');
+    console.log(await contractInstance.methods.name().call({from: accounts[0]}));
+
+    expect(await contractInstance.methods.symbol().call({from: accounts[0]})).to.equal('EVH');
+    console.log(await contractInstance.methods.symbol().call({from: accounts[0]}));
+
+    expect(await contractInstance.methods.baseTokenURI().call({from: accounts[0]})).to.equal('www.elefantvonhinten.de');
+    console.log(await contractInstance.methods.baseTokenURI().call({from: accounts[0]}));
+
     expect(await contractInstance.methods.maxTokens().call({from: accounts[0]})).to.equal('5');
+    console.log(await contractInstance.methods.maxTokens().call({from: accounts[0]}));
+
+    expect(await contractInstance.methods.maxMints().call({from: accounts[0]})).to.equal('2');
+    console.log(await contractInstance.methods.maxMints().call({from: accounts[0]}));
+
+    expect(await contractInstance.methods.tokenPrice().call({from: accounts[0]})).to.equal('1000');
+    console.log(await contractInstance.methods.tokenPrice().call({from: accounts[0]}));
+
   });
 
 });
