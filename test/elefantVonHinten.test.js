@@ -1,6 +1,7 @@
 const assert = require('assert');
 const path = require('path');
 const fs = require('fs');
+const {expect} = require('chai');
 
 const { Buffer } = require('buffer');
 
@@ -90,6 +91,9 @@ describe('Testing ElefantVonHintenNFT on mainnetForkfork', () => {
       console.log(client.getEndpointConfig()); //
   });
 
-  
+  it('3. Sets all state variables', async () => {
+    //console.log(await contractInstance.methods.maxTokens().call({from: accounts[0]}));
+    expect(await contractInstance.methods.maxTokens().call({from: accounts[0]})).to.equal('5');
+  });
 
 });
