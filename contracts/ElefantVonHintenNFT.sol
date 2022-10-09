@@ -3,10 +3,9 @@ pragma solidity 0.8.10;
 
 import "./MyERC721.sol";
 import "./Context.sol";
-// import "./Ownable.sol";
-/*import "@openzeppelin/contracts/access/Ownable.sol";*/
+import "./Ownable.sol";
 
-contract ElefantVonHinten is MyERC721, Context {
+contract ElefantVonHinten is MyERC721, Context, Ownable {
   uint256 public maxTokens; // Maximum of tokens to be minted
   uint256 public maxMints; // Maximum of tokens to be minted at a time
   uint256 public tokenPrice;
