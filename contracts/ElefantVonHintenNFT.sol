@@ -3,6 +3,8 @@ pragma solidity 0.8.10;
 
 import "./MyERC721.sol";
 import "./Context.sol";
+// import "./Ownable.sol";
+/*import "@openzeppelin/contracts/access/Ownable.sol";*/
 
 contract ElefantVonHinten is MyERC721, Context {
   uint256 public maxTokens; // Maximum of tokens to be minted
@@ -13,24 +15,34 @@ contract ElefantVonHinten is MyERC721, Context {
   string public baseTokenURI;
 
   /**
-   * @dev All state variables are initialized in the constructor.
-   * To be more flexible one could define setter functions for each state variable and call them in the constructor.
-   * We will keep it as simple as possible here.
+   * @dev Only name and symbol of the collection will be initialized in the constructor
+   * All other state variables will be defined by the owner in the initialize function
+   * to be able to upload collection assets to ipfs first and pass the returned CID to baseTokenURI
    */
   constructor(
     string memory name,
-    string memory symbol,
-    string memory baseTokenURI_,
-    uint256 maxTokens_,
-    uint256 maxMints_,
-    uint256 tokenPrice_
-  ) MyERC721(name, symbol) {
-    maxTokens = maxTokens_;
-    maxMints = maxMints_;
-    tokenPrice = tokenPrice_;
-    baseTokenURI = baseTokenURI_;
+    string memory symbol
+  ) MyERC721(name, symbol) {}
+
+  /* SETTERS */
+  function setBaseTokenURI(string memory _baseTokenURI) public onlyOwner {
+    baseTokenURI = _baseTokenURI;
   }
 
+  function setMaxTokens(uint256 _maxTokens) public onlyOwner {
+    maxTokens = _maxTokens;
+  }
+
+  function setMaxMints(uint256 _maxMints) public onlyOwner {
+    maxMints = _maxMints;
+  }
+
+  function setTokenPrice(uint256 _tokenPrice) public onlyOwner {
+    tokenPrice = _tokenPrice;
+  }
+
+
+  /* GETTERS */
   /**
    * @dev Overrides the corresponding internal function in MyERC721
    * the resulting URI for each token will be the concatenation of the `baseTokenURI` and the `tokenId`.
