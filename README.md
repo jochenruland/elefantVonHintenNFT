@@ -1,4 +1,4 @@
-# Experimenting with Basic IPFS Features
+# NFT collection to experiment with custom implementation of ERC721 and ipfs client 
 
 ## Scope
 The scope of this project is to experiment with the different aspects of a dApp for NTFs. This includes:
